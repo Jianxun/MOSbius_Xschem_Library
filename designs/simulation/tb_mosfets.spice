@@ -1,0 +1,43 @@
+** sch_path: /foss/designs/libs/tb_MOSbius_v1/tb_mosfets/tb_mosfets.sch
+**.subckt tb_mosfets
+x2 D1 GND G1 GND DP_nMOS_4x_A
+**** begin user architecture code
+
+
+* DC voltage source syntax:
+* V{i} {plus} {minus} {Vdc}
+VG1 G1 GND 1
+VD1 D1 GND 1
+
+
+
+
+.control
+* DC sweep syntax:
+* DC {Vsrc} {Vstart} {Vstop} {Vstep}
+DC VD1 0 1 0.01
+write tb_mosfets.raw
+.endc
+
+
+
+.include /foss/pdks/gf180mcuD/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.ngspice typical
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  libs/MOSbius_v1/DP_nMOS_4x_A/DP_nMOS_4x_A.sym # of pins=4
+** sym_path: /foss/designs/libs/MOSbius_v1/DP_nMOS_4x_A/DP_nMOS_4x_A.sym
+** sch_path: /foss/designs/libs/MOSbius_v1/DP_nMOS_4x_A/DP_nMOS_4x_A.sch
+.subckt DP_nMOS_4x_A drain sub gate source
+*.iopin drain
+*.iopin source
+*.iopin sub
+*.iopin gate
+XM1 drain gate source sub nfet_03v3 L=0.5u W=4u nf=2 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+.ends
+
+.GLOBAL GND
+.end
