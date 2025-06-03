@@ -6,5 +6,7 @@ source $env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/xschemrc
 set 180MCU_MODELS ${PDK_ROOT}/gf180mcuD/libs.tech/ngspice
 
 set XSCHEM_LIBRARY_PATH ${XSCHEM_LIBRARY_PATH}:/foss/designs/libs
-set XSCHEM_LIBRARY_PATH ${XSCHEM_LIBRARY_PATH}:${XSCHEM_SHAREDIR}/xschem_library/devices
+#set XSCHEM_LIBRARY_PATH ${XSCHEM_LIBRARY_PATH}:${XSCHEM_SHAREDIR}/xschem_library/devices
 
+set XSCHEM_START_WINDOW /foss/designs/libs/MOSbius_v1/0_top/0_top.sch
+ 

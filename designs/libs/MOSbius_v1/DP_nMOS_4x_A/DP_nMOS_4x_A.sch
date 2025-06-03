@@ -15,10 +15,10 @@ N 40 -70 40 -40 {lab=drain}
 N 40 40 40 70 {lab=source}
 N 40 30 40 40 {lab=source}
 N 40 -40 40 -30 {lab=drain}
-C {iopin.sym} 60 -70 0 0 {name=p2 lab=drain}
-C {iopin.sym} 60 70 0 0 {name=p4 lab=source}
-C {iopin.sym} 90 0 0 0 {name=p1 lab=sub}
-C {iopin.sym} -40 0 0 1 {name=p3 lab=gate}
+C {devices/iopin.sym} 60 -70 0 0 {name=p2 lab=drain}
+C {devices/iopin.sym} 60 70 0 0 {name=p4 lab=source}
+C {devices/iopin.sym} 90 0 0 0 {name=p1 lab=sub}
+C {devices/iopin.sym} -40 0 0 1 {name=p3 lab=gate}
 C {symbols/nfet_03v3.sym} 20 0 0 0 {name=M1
 L=0.5u
 W=4u
