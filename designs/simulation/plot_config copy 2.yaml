@@ -1,0 +1,33 @@
+
+Graph1:
+  title: "Ring Oscillator Transient 1"
+  source: "./Ring_Oscillator_7stage.raw"
+
+  X:
+    label: "Time (s)"
+    signal_key: "raw.time"
+
+  Y:
+    - Y1:
+      label: "Voltage (V)"
+      signals:
+        BUS06: "v(bus06)"
+        BUS08: "v(bus07)"
+    - Y2:
+      label: "Voltage (V)"
+      signals:
+        BUS06: "v(bus08)"
+
+Graph2:
+  title: "Ring Oscillator Transient 2"
+  source: "./Ring_Oscillator_7stage.raw"
+
+  X:
+    label: "Time (s)"
+    signal_key: "raw.time"
+
+  Y:
+    - Y1:
+      label: "Voltage (V)"
+      signals:
+        BUS06: "v(bus06)"

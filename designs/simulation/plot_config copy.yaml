@@ -1,0 +1,16 @@
+title: "MOSFET ID vs VDS"
+source: "./tb_mosfets.raw"
+
+X:
+  label: "Vds (V)"
+  signal_key: "raw.V(v-sweep)"
+
+Y_axes:
+  - Y3:
+    label: "Current (A)"
+    signals:
+      Id: "raw.i(vd1)"
+  - Y2:
+    label: "Voltage (V)"
+    signals:
+      Vd: "raw.v(d1)"

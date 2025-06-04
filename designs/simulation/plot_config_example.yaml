@@ -1,0 +1,16 @@
+
+title: "My Circuit Response"
+source: "amp.raw"
+X: 
+  label: "Time (s)"
+  signal: time
+Y:
+  - Y1:
+    label: "Voltage (V)", 
+    signals: 
+      V_in: V(in)
+      V_out: V(out)
+  - Y2:
+    label: "Current (A)" 
+    signals: 
+      I_Vdd: I(Vdd)

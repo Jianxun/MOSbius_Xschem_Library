@@ -1,6 +1,14 @@
-
-
 # Ignore all spice simulation results
 *.raw
 *.asc
 *.asy
+
+venv/
+.venv/
+
+.ipynb_checkpoints/
+*.db
+
+.DS_Store
+
+
