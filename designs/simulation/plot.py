@@ -1,78 +1,8 @@
-# %%
-# read the raw data from the ngspice output
 from spicelib import RawRead # Assuming spicelib is installed and in the Python path
 import numpy as np # Import numpy for NumPy arrays
 import sys # Import sys for sys.exit
 import os # Import for path manipulation
 
-# Path to your raw file
-# raw_file_path = "tb_mosfets.raw" # Make sure this file is in the same directory as the script, or provide the full path
-
-# try: # START OF BLOCK TO COMMENT OUT
-#     # Create a RawRead object
-#     raw_data = RawRead(raw_file_path)
-# 
-#     print(f"Successfully loaded {raw_file_path}")
-# 
-#     # Get a list of available traces (signals/vectors) in the raw file
-#     traces = raw_data.get_trace_names()
-#     print("\nAvailable traces:")
-#     for trace_name in traces:
-#         print(f"- {trace_name}")
-# 
-#     # Get the specific traces for plotting
-#     x_axis_trace_name = "v(v-sweep)" # Assuming this is your sweep voltage
-#     y_axis_trace_name = "i(vd1)"
-# 
-#     if x_axis_trace_name in traces and y_axis_trace_name in traces:
-#         x_trace_object = raw_data.get_trace(x_axis_trace_name)
-#         y_trace_object = raw_data.get_trace(y_axis_trace_name)
-# 
-#         # Convert to NumPy arrays to allow for mathematical operations
-#         # Ensure x_trace_object and y_trace_object are not None before converting
-#         if x_trace_object is None or y_trace_object is None:
-#             print(f"Error: Could not retrieve one or both traces: {x_axis_trace_name}, {y_axis_trace_name}")
-#             sys.exit(1) # Exit if traces are not found
-#             
-#         x_data = np.array(x_trace_object)
-#         y_data = np.array(y_trace_object)
-# 
-#         print(f"\nPlotting -1 * {y_axis_trace_name} vs {x_axis_trace_name} using Plotly...")
-# 
-#     else:
-#         print(f"\nError: Could not find one or both traces for plotting: {x_axis_trace_name}, {y_axis_trace_name}")
-#         x_data, y_data = None, None # Ensure these are defined even if traces are not found, for plotly section
-# 
-# 
-# except FileNotFoundError:
-#     print(f"Error: The file {raw_file_path} was not found.")
-#     x_data, y_data = None, None # Ensure definition for plotly
-#     x_axis_trace_name, y_axis_trace_name = "X", "Y" # Default names for plotly if file not found
-# except ImportError as e:
-#     print(f"Error: {e}. Please ensure required libraries are installed.")
-#     x_data, y_data = None, None
-#     x_axis_trace_name, y_axis_trace_name = "X", "Y"
-# except Exception as e:
-#     print(f"An error occurred: {e}")
-#     x_data, y_data = None, None
-#     x_axis_trace_name, y_axis_trace_name = "X", "Y" # END OF BLOCK TO COMMENT OUT
-
-# To learn more about what you can do with the raw_data object,
-# you can explore its methods and attributes:
-# print(dir(raw_data))
-#
-# And for a specific trace object:
-# if traces:
-#   trace_object = raw_data.get_trace(traces[0])
-#   print(dir(trace_object))
-#
-# Refer to the spicelib documentation for more details:
-# https://github.com/nunobrum/spicelib
-
-
-#  %%
-
-# NEW FUNCTION IMPLEMENTATION STARTS HERE
 import plotly.graph_objects as go
 import numpy as np
 import yaml # For loading plot_config.yaml
@@ -327,10 +257,3 @@ if __name__ == "__main__":
         print(f"An error occurred during plot generation: {e}")
         import traceback
         traceback.print_exc()
-
-# Remove old plotly code block if it's still there:
-# The user's file had the old plotly block.
-# The new code should replace it or be placed logically.
-# For this edit, I'm assuming the old code from line ~100 to ~190 (plotly part)
-# would be replaced by the call to create_plotly_figure within the __main__ block.
-# The `edit_file` tool needs precise start/end or `// ... existing code ...`
