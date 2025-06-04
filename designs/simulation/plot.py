@@ -137,10 +137,10 @@ def create_plotly_figure(
 
 
     # Prepare Y-axes
-    y_axes_config = plot_config.get("Y_axes", [])
+    y_axes_config = plot_config.get("Y", [])
     num_y_axes = len(y_axes_config)
     if num_y_axes == 0:
-        print("Warning: No Y_axes defined in plot_config.")
+        print("Warning: No Y defined in plot_config.")
         # Potentially return an empty figure or raise error, for now, it will be an empty plot
     
     y_axis_domains = []
