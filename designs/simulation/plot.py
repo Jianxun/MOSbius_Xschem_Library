@@ -235,28 +235,7 @@ if __name__ == "__main__":
     plot_config_path = "./plot_config.yaml" # Make sure this file exists
 
     # Create an example plot_config.yaml if it doesn't exist for demonstration
-    example_yaml_content = """
-title: "Example MOSFET IV Characteristics"
-source: "tb_mosfets.raw" # Path to your raw file
-
-X:
-  label: "Drain-Source Voltage (V)"
-  signal_key: "raw.v(v-sweep)"
-
-Y_axes:
-  - label: "Drain Current (A)"
-    signals:
-      "Id (raw)": "raw.i(vd1)" # Plot raw current
-      "Id (inverted)": "data.inverted_id_vd1" # Plot processed (inverted) current
-  - label: "Gate Voltage (V)" # Example of a second Y-axis
-    signals:
-      "Vg": "raw.v(vg)" # Assuming v(vg) is a trace in your raw file
-
-plot_height: 700
-show_rangeslider: true
-show_zoom_buttons: true
-default_dragmode: "zoom"
-"""
+    example_yaml_content = ""
     try:
         with open(plot_config_path, 'r') as f:
             yaml.safe_load(f) # Try to load it
